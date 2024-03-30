@@ -64,10 +64,11 @@ def program_launch(sorted_list):
         exit()
     if name > len(sorted_list):
         print("Вы ввели недопустимое количество выполненных операций, попробуйте ввести меньшее количество!")
+        exit()
     else:
         end_result = ""
         for i in sorted_list[:name]:
-            source = i.get('from', '_____')
+            source = i.get('from', '  ')
             end_result += (f"{i['date'][0:11]} {i['description']}\n"
                            f"{source} -> {i['to']}\n"
                            f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}\n")
