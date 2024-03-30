@@ -4,7 +4,7 @@ from datetime import datetime
 
 def load_transactions():
     """Загружает список операций из файла """
-    with open("base.json", "r") as file:
+    with open("base.json") as file:
         base = json.load(file)
         return base
 
@@ -72,5 +72,3 @@ def program_launch(sorted_list):
                            f"{source} -> {i['to']}\n"
                            f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}\n")
         return end_result
-
-
